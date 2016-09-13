@@ -1,0 +1,28 @@
+<% include partials/header%>
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>Search Engine Results</h1>
+			<p>Keyword: <%= keyword%><p>
+			<p>
+                <a class="btn btn-primary btn-large" href="/">Search Again!</a>
+            </p>
+		</div>
+	</header>
+</div>
+
+<div class="container">
+	<h3>Found Tweets!</h1>
+
+	<% data["hits"]["hits"].forEach(function(tweet){ %>
+		<div><strong>Name: </strong> <%= tweet["_source"]["user"]["name"]%> </div>
+		<div><strong>Time: </strong> <%= tweet["_source"]["created_at"]%> </div>
+		<div><strong>Tweet: </strong> <%= tweet["_source"]["text"]%> </div>
+
+		<!-- <div><strong>Source:</strong> <%= tweet["_source"]["source"] %> </div> -->
+		<div>================================</div>
+	<% }); %>
+
+</div>
+
+<% include partials/footer%>

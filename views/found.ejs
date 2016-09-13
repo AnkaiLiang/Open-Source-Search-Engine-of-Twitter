@@ -1,0 +1,13 @@
+<% include partials/header%>
+<h1>Found Page!</h1>
+
+<p>This is a found page!</p>
+
+<% storedTweets.forEach(function(tweet){ %>
+	<div><strong>Tweet: </strong> <%= tweet.text %> </div>
+
+	<div><strong>Source:</strong> <%= tweet.source %> </div>
+	<div>================================</div>
+<% }); %>
+<!-- <a href="/campgrounds">View Our Campground</a> -->
+<% include partials/footer%>
